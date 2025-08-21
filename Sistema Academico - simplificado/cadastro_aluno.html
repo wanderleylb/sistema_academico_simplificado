@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- 
+    Referências úteis:
+    https://www.w3schools.com/
+    https://pt.stackoverflow.com/questions/280758/mascara-no-form-somente-em-html-e-css
+-->
+
+<head>
+    <!-- Declaração do conjunto de caracteres usado -->
+    <meta charset="UTF-8">
+
+    <!-- Autor da página -->
+    <meta name="author" content="Wanderley Lopes Batista">    
+
+    <!-- Configuração para o site ser responsivo em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">                     
+
+    <!-- Título que aparece na aba do navegador -->
+    <title>Cadastro de Aluno</title>
+    
+    <!-- Importação do arquivo CSS externo -->
+    <link rel="stylesheet" href="css/estilo.css" type="text/css">     
+
+    <!-- Importação de arquivo JavaScript externo -->
+    <script type="text/javascript" src="js/codigo.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Título principal da página -->
+    <h2>CADASTRO DE ALUNOS</h2>
+
+    <!-- Linha horizontal apenas para separação visual -->
+    <hr>
+
+    <!-- Breve instrução -->
+    <p>Preencha os dados do(a) aluno(a):</p>
+    <br>
+    <!-- A tag <fieldset> em HTML é usada para agrupar elementos de formulário relacionados em uma seção
+     ou contêiner.
+     -->
+    <fieldset>
+        <legend>CADASTRO DE ALUNO(A)</legend>
+        <br>
+        <!-- Formulário: método POST envia os dados ao PHP -->
+
+        <!-- O GET é muito utilizado para ACESSAR recurso, uma informação, 
+         REQUISIÇÕES utilizando o método GET devem retornar apenas dados.  
+         No método POST para ENVIAR dador. Mais seguro. O usuário não vê os dados enviados na URL.-->
+        <form name="formalunos" method="post" onsubmit="return testa_form();" action="#">
+
+            <!-- Nome do aluno -->
+            <label for="aluno">Nome do aluno: *</label><br>
+            <input type="text" id="aluno" name="aluno" style="width: 310px;" required> 
+            <br>
+            <br>
+            <!-- Data de nascimento -->
+            <label for="data">Data de nascimento:</label>
+            <input type="date" id="data" name="data" required>
+            <br>
+            <br> 
+            <!-- Sexo -->
+            <span>Sexo:</span>
+            <input type="radio" id="masculino" name="sexo" value="masculino">
+            <label for="masculino">Masculino</label>
+            
+            <input type="radio" id="feminino" name="sexo" value="feminino">
+            <label for="feminino">Feminino</label>
+            <br>
+            <br>
+            <!-- CPF -->
+            <label for="cpf">CPF: *</label>
+            <input type="text" id="cpf" name="cpf" placeholder="###.###.###-##" autocomplete="off" style="width: 110px;" data-mask="cpf" oninput="mascara(this)" required> <br>
+			<!--A tag <small> no HTML é usada para indicar texto em menor destaque -->
+            <small>(Sem espaços, pontos ou traços)</small>
+            <br>
+            <br>
+            <!-- Endereço -->
+            <label for="endereco">Endereço:</label><br>
+            <input type="text" id="endereco" name="endereco" style="width: 310px;"> 
+            <br>
+            <br>
+            <!-- Complemento -->
+            <label for="complemento">Complemento:</label><br>
+            <input type="text" id="complemento" name="Complemento" style="width: 310px;"> 
+            <br>
+            <br>
+            <!-- CEP -->
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" placeholder="#####-###" autocomplete="off" style="width: 80px;" data-mask="cep" oninput="mascara(this)"> 
+            <br>
+            <br>
+            <!-- Bairro -->
+            <label for="bairro">Bairro:</label><br>
+            <input type="text" id="bairro" name="bairro" style="width: 310px;"> 
+            <br>
+            <br>
+            <!-- Cidade -->
+            <label for="cidade">Cidade:</label><br>
+            <input type="text" id="cidade" name="cidade" style="width: 310px;"> 
+            <br>
+            <br>
+            <!-- Estado -->
+            <label for="estado">Estado:</label>
+            <select name="estado" id="estado" required>
+                <option value="">Selecione o estado:</option>
+                <option value="ac">Acre</option>
+                <option value="al">Alagoas</option>
+                <option value="ap">Amapá</option>
+                <option value="am">Amazonas</option>
+                <option value="ba">Bahia</option>
+                <option value="ce">Ceará</option>
+                <option value="df">Distrito Federal</option>
+                <option value="es">Espírito Santo</option>
+                <option value="go">Goiás</option>
+                <option value="ma">Maranhão</option>
+                <option value="ms">Mato Grosso do Sul</option>
+                <option value="mt">Mato Grosso</option>
+                <option value="mg">Minas Gerais</option>
+                <option value="pa">Pará</option>
+                <option value="pb">Paraíba</option>
+                <option value="pr">Paraná</option>
+                <option value="pe">Pernambuco</option>
+                <option value="pi">Piauí</option>
+                <option value="rj">Rio de Janeiro</option>
+                <option value="rn">Rio Grande do Norte</option>
+                <option value="rs">Rio Grande do Sul</option>
+                <option value="ro">Rondônia</option>
+                <option value="rr">Roraima</option>
+                <option value="sc">Santa Catarina</option>
+                <option value="sp">São Paulo</option>
+                <option value="se">Sergipe</option>
+                <option value="to">Tocantins</option>
+            </select>
+            <br>
+            <br>
+            <!-- Telefone -->
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" placeholder="(##) #####-####" autocomplete="off" style="width: 110px;" data-mask="cel" oninput="mascara(this)"> <br>
+            <br>
+            <br>
+            <!-- Botões de ação -->
+            <input type="reset" value="Limpar">
+            <input type="submit" value="Enviar">
+        </form>
+    </fieldset>
+    <br>
+    <br>
+    <!-- Rodapé -->
+    <footer>
+        <p style="text-align: center;">
+            <a href="mailto:wanderleylb@gmail.com">Author: Wanderley L. Batista</a></p><br>
+                   WLB Qualidade & Desenvolvimento LTDA <br>
+                   Todos os direitos reservados
+        </p>
+    </footer>
+
+</body>
+</html>

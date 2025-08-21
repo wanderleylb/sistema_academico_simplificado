@@ -1,0 +1,80 @@
+﻿/* Asterisco = seletor universal, representa todos 
+os elementos serão afetados
+
+margin: valor1 - as quatro margens terão valor1.
+margin: valor1 valor2 - margem superior e inferior terão valor1 - margem direita e esquerda terão valor2
+margin: valor1 valor2 valor3 - margem superior terá valor1 - margem direita e esquerda terão valor2 - margem inferior terá valor3.
+margin: valor1 valor2 valor3 valor4 - margens superior, direita, inferior e esquerda nesta ordem.
+
+*/
+
+
+* {
+	
+   
+	margin: 3px 4px 2px 3px;
+	
+}
+
+/* Estilos do corpo da página */
+body {
+  background: #f8efba;          /* Cor de fundo da página */
+  font-family: Courier, monospace; /* Fonte padrão para o texto */
+}
+
+/* Estilos da imagem/banner principal */
+#banner {
+  width: 99%;           /* Largura total do elemento pai */
+  height: 200px;         /* Altura fixa de 400 pixels */
+  margin-bottom: 30px;   /* Espaço abaixo do banner */
+  border-radius: 12px;   /* Bordas arredondadas com raio de 12px */
+}
+
+/* Estilo do título principal */
+h2 {
+  background: green;     /* Fundo verde */
+  text-align: center;    /* Texto centralizado */
+  color: #fff;           /* Cor do texto branca */
+  width: auto;           /* Ocupa toda a largura disponível */
+}
+
+fieldset {
+  padding: 8px 12px; /* 8px em cima e embaixo, 12px nas laterais */
+}
+
+/* Estilo para o parágrafo de boas-vindas */
+#bem_vindo {
+  font-family: Courier;
+  color: green;          /* Cor do texto verde */
+  font-size: 22px;       /* Tamanho da fonte maior para destaque */
+}
+
+ul.menu {
+	
+	background-color: rgb(37, 37, 39); /*cor de fundo */
+	width:auto; /*width: = largura.   height: = altura. */
+	font-family: times new roman;
+  font-size: 20px;
+	padding: 10px; /*preenchimento interno. Distância entre o elemento e as bodas da página.*/
+	  
+}
+
+/* Deixa os itens do menu um abaixo do outro */
+ul.menu li {
+
+  /*display: inline;  Mostra na mesma linha */
+  display: block; 
+ 
+}
+
+/* Aparência dos links */
+ul.menu li a {
+  color: #FFF;          /* Texto branco */
+  text-decoration: none; /* Remove o sublinhado (underline) de link */
+  padding: 5px 10px;     /* Espaço interno para facilitar o clique */
+}
+
+/* Efeito quando o mouse passa por cima */
+ul.menu li a:hover {
+  background-color: blue; /* Fundo azul ao passar o mouse */
+}
